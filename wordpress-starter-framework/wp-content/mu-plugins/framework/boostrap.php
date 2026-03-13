@@ -42,6 +42,19 @@ $project_config = require PROJECT_FRAMEWORK_PATH . '/config/project.php';
 
 /*
 |--------------------------------------------------------------------------
+| Config Helper
+|--------------------------------------------------------------------------
+*/
+
+function project_config($key, $default = null)
+{
+    global $project_config;
+
+    return $project_config[$key] ?? $default;
+}
+
+/*
+|--------------------------------------------------------------------------
 | Module Helper
 |--------------------------------------------------------------------------
 */
@@ -137,3 +150,11 @@ if (function_exists('project_has_bricks') && project_has_bricks()) {
     }
 
 }
+
+/*
+|--------------------------------------------------------------------------
+| Loader Integrations
+|--------------------------------------------------------------------------
+*/
+
+require_once PROJECT_FRAMEWORK_PATH . '/integrations/integrations-loader.php';
