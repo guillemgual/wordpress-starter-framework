@@ -10,7 +10,6 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-
 /*
 |--------------------------------------------------------------------------
 | Framework Paths
@@ -37,7 +36,6 @@ require_once PROJECT_FRAMEWORK_PATH . '/autoloader.php';
 */
 
 $project_modules = require PROJECT_FRAMEWORK_PATH . '/config/modules.php';
-
 $project_config = require PROJECT_FRAMEWORK_PATH . '/config/project.php';
 
 /*
@@ -64,13 +62,6 @@ function project_module_enabled($module)
     global $project_modules;
 
     return isset($project_modules[$module]) && $project_modules[$module] === true;
-}
-
-function project_config($key, $default = null)
-{
-    global $project_config;
-
-    return $project_config[$key] ?? $default;
 }
 
 /*
